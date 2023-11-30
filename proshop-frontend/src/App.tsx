@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomeView from "./views/HomeView";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Header />
       <main className="py-4">
         <Container>
-          <HomeView />
+          <Outlet />
         </Container>
       </main>
       <Footer />
