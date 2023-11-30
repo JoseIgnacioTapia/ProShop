@@ -11,11 +11,13 @@ import App from "./App.tsx";
 import "./assets/styles/bootstrap.custom.css";
 import "./assets/styles/index.css";
 import HomeView from "./views/HomeView.tsx";
+import ProductView from "./views/ProductView.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/" element={<HomeView />} />
+      <Route path="/product/:id" element={<ProductView />} />
     </Route>
   )
 );
