@@ -24,7 +24,7 @@ const ProductView = () => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={product?.rating}
+                value={product?.rating ?? 0}
                 text={`${product?.numReviews} reviews`}
               />
             </ListGroup.Item>
@@ -48,7 +48,7 @@ const ProductView = () => {
                   <Col>Status:</Col>
                   <Col>
                     <strong>
-                      {product?.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                      {product!.countInStock > 0 ? "In Stock" : "Out of Stock"}
                     </strong>
                   </Col>
                 </Row>
