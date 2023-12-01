@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import productsRoutes from "../routes/products";
+import cors from "cors";
 
 class Server {
   private app: Application;
@@ -12,7 +13,17 @@ class Server {
     this.app = express();
     this.port = process.env.PORT || "8000";
 
+    // Metodos iniciales
+    this.middlewares();
     this.routes();
+  }
+
+  middlewares() {
+    // CORS
+    this.app.use(cors());
+
+    // Lectura del BODY
+    this.app.use(express.json());
   }
 
   routes() {

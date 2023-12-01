@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import { RootObject } from "../products";
+import { RootObject } from "../productsTypes";
 import Rating from "./Rating";
 
 function Product(props: { product: RootObject }) {
