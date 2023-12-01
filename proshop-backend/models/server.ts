@@ -1,12 +1,22 @@
 import express, { Application } from "express";
+import productsRoutes from "../routes/products";
 
 class Server {
   private app: Application;
   private port: string;
+  private apiPaths = {
+    products: "/api/products",
+  };
 
   constructor() {
     this.app = express();
     this.port = process.env.PORT || "8000";
+
+    this.routes();
+  }
+
+  routes() {
+    this.app.use(this.apiPaths.products, productsRoutes);
   }
 
   listen() {
