@@ -25,7 +25,9 @@ class Server {
       await db.authenticate();
       console.log("Database Online");
     } catch (error) {
-      throw new Error(error);
+      if (typeof error === "string" || typeof error === "undefined") {
+        throw new Error(error);
+      }
     }
   }
 
